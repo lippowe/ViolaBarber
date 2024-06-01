@@ -6,13 +6,17 @@
 	<title>Контакты</title>
 	<div th:replace="~{commons :: head}"></div>
 
-
+	<script src="https://api-maps.yandex.ru/v3/?apikey=fa3236bb-6181-4b29-b25c-1906315e829c&lang=en_US"></script>
+	<script src="js/yamap.js" class="map"></script>
+	
+	
 </head>
 <body class="multi-page">
 
 <div id="wrapper" class="wrapper">
 
 	<!-- HEADER -->
+	
 	<div th:replace="~{commons :: nav}"></div>
 	
 	<div class="close-btn fa fa-times"></div>
@@ -27,12 +31,6 @@
 						<div class="space20"></div>
 						<ul class="contact-info">
 							<li>
-								<p><strong><i class="fa fa-map-marker"></i> Адрес:</strong> <span>улица Просвещения, 56, посёлок Вокзальный, Орск, Оренбургская область, 462408</span></p>
-							</li>
-							<li>
-								<p><strong><i class="fa fa-map-marker"></i> Адрес №2:</strong> <span>Станционная улица, 12, посёлок Вокзальный, Орск, Оренбургская область, 462408</span></p>
-							</li>
-							<li>
 								<p><strong><i class="fa fa-envelope"></i> Написать нам:</strong> <span><a href="#">Viola@support.ru</a></span></p>
 							</li>
 							<li>
@@ -41,12 +39,22 @@
 							<li>
 								<p><strong><i class="fa fa-print"></i> Телефон №2:</strong> <span>+7 (905) 887-88-80</span></p>
 							</li>
+							<li>
+								<p><strong><i class="fa fa-map-marker"></i> Адрес:</strong> <span>улица Просвещения, 56, посёлок Вокзальный, Орск, Оренбургская область, 462408</span></p>
+							</li>
+							<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A42be3de4d8d25e2b0c2e0bee561bf42e8ec6f35a77d2e5084c1cb17c3f2ccc09&amp;width=730&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+							<li>
+								<p><strong><i class="fa fa-map-marker"></i> Адрес №2:</strong> <span>Станционная улица, 12, посёлок Вокзальный, Орск, Оренбургская область, 462408</span></p>
+							</li>
+							<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3f63787c860bc16943eb99340bf89a7bcf790f61301af35e55e31239c6e3dff7&amp;width=730&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	
 
 	<div class="clearfix space70"></div>
 	<!-- FOOTER -->
