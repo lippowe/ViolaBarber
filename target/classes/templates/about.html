@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>О нас</title>
+
+    <div th:replace="~{commons :: head}"></div>
+</head>
+<body class="multi-page">
+
+<div id="wrapper" class="wrapper">
+	<div th:replace="~{commons :: nav}"></div>
+	
+	<div class="close-btn fa fa-times"></div>
+
+	<!-- INNER CONTENT -->
+	<section id="content">
+		<div class="page_header page_header2 text-center">
+			<h2>О нас</h2>
+			<p>Мы являемся лучшим салоном красоты</p>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="/img/AboutUs.jpg" class="img-responsive" alt=""/>
+				</div>
+				<div class="col-md-6 about-info">
+					<h2>История салона красоты</h2>
+					<p>История - это очень важный момент в рассказе о чем либо, который является нераздельным элементом повествования. Но не будем о нем, лучше расскажем пару занимательных фактов о нас
+					</p>
+					<div class="panel-group" id="accordion-e1">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseOne">
+										Символизм и психология стрижек
+									<span class="fa fa-angle-down"></span>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="row">
+										<p>
+											Стрижка волос часто имеет глубокий символический смысл и психологическое воздействие. 
+											Во многих культурах смена прически ассоциируется с новыми начинаниями, важными жизненными переменами или желаниями что-то изменить в своей жизни. 
+											Психологи отмечают, что изменение прически может быть способом выразить свою индивидуальность, повысить уверенность в себе или даже справиться с эмоциональными трудностями. 
+											Например, люди часто решаются на радикальную смену прически после значительных событий, таких как окончание отношений, смена работы или переезд в другой город. 
+											Стрижка может служить своего рода ритуалом обновления, помогая человеку чувствовать себя обновленным и готовым к новым этапам в жизни. 
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseTwo">
+										Разнообразие услуг
+									<span class="fa fa-angle-right"></span>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>
+										Современные салоны красоты предлагают не только традиционные стрижки и укладки, но и множество других услуг. 
+										Среди них - маникюр и педикюр, косметические процедуры для лица и тела, массаж, солярий, спа-процедуры, а также услуги по уходу за ресницами и бровями. 
+										В последнее время становятся популярными такие инновационные процедуры, как микроблейдинг, ламинирование ресниц и различные виды аппаратной косметологии.									
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseThree">
+										Тренды и инновации
+									<span class="fa fa-angle-right"></span>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>
+										Индустрия красоты постоянно развивается и внедряет новейшие технологии и методы. 
+										Например, в последние годы популярность набирают экологически чистые и органические продукты для ухода, а также процедуры, направленные на минимизацию вреда для окружающей среды. 
+										Помимо этого, современные салоны красоты активно используют цифровые технологии для улучшения клиентского опыта, включая онлайн-запись на процедуры, виртуальные консультации и персонализированные рекомендации по уходу.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<div class="clearfix space70"></div>
+	<!-- FOOTER -->
+	 <div th:replace="~{commons :: footer}"></div>
+	
+	<!-- FOOTER -->
+</div>
+
+
+<div th:replace="~{commons :: js}"></div>
+
+</body>
+</html>

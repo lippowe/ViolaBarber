@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Meta -->
+	<title>Контакты</title>
+	<div th:replace="~{commons :: head}"></div>
+
+
+</head>
+<body class="multi-page">
+
+<div id="wrapper" class="wrapper">
+
+	<!-- HEADER -->
+	<div th:replace="~{commons :: nav}"></div>
+	
+	<div class="close-btn fa fa-times"></div>
+	
+	<!-- INNER CONTENT -->
+	<section id="content">
+		<div class="content-blog">
+			<div class="container">
+				<div class="row" style="justify-content: center; display: flex;">					
+					<div class="col-md-8 mx-auto">
+						<h3 class="no-margin">Контактная информация</h3>
+						<div class="space20"></div>
+						<ul class="contact-info">
+							<li>
+								<p><strong><i class="fa fa-map-marker"></i> Адрес:</strong> <span>улица Просвещения, 56, посёлок Вокзальный, Орск, Оренбургская область, 462408</span></p>
+							</li>
+							<li>
+								<p><strong><i class="fa fa-map-marker"></i> Адрес №2:</strong> <span>Станционная улица, 12, посёлок Вокзальный, Орск, Оренбургская область, 462408</span></p>
+							</li>
+							<li>
+								<p><strong><i class="fa fa-envelope"></i> Написать нам:</strong> <span><a href="#">Viola@support.ru</a></span></p>
+							</li>
+							<li>
+								<p><strong><i class="fa fa-phone"></i> Телефон:</strong> <span>+7 (905) 881-10-27</span></p>
+							</li>
+							<li>
+								<p><strong><i class="fa fa-print"></i> Телефон №2:</strong> <span>+7 (905) 887-88-80</span></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="clearfix space70"></div>
+	<!-- FOOTER -->
+	 <div th:replace="~{commons :: footer}"></div>
+	
+	<!-- FOOTER -->
+</div>
+
+
+<div th:replace="~{commons :: js}"></div>
+
+</body>
+</html>
