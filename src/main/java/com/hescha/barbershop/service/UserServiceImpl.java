@@ -20,7 +20,6 @@ public class UserServiceImpl extends CrudImpl<User> {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
     public UserServiceImpl(UserRepository repository) {
         super(repository);
         this.repository = repository;

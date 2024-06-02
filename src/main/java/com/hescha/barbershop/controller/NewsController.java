@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.sql.Date;
 import java.util.List;
@@ -28,7 +28,7 @@ public class NewsController {
     }
 
     @RequestMapping(path = {"/edit", "/edit/{id}"})
-    public String edit(Model model, @PathVariable(name = "id", required =
+    public String edit(Model model, @PathVariable(required =
             false) Long id) {
         if (id != null) {
             News entity = service.read(id);
@@ -41,20 +41,20 @@ public class NewsController {
         return "news-add-edit";
     }
 
-    @RequestMapping(path = "/create", method = RequestMethod.POST)
+    @PostMapping("/create")
     public String createOrUpdate(News entity) throws Exception {
         service.create(entity);
         return "redirect:/news";
     }
 
     @RequestMapping(path = "/delete/{id}")
-    public String delete(Model model, @PathVariable("id") Long id) throws Exception {
+    public String delete(Model model, @PathVariable Long id) throws Exception {
         service.delete(id);
         return "redirect:/news";
     }
 
     @RequestMapping("/get/{id}")
-    public String getView(Model model, @PathVariable(name = "id", required =
+    public String getView(Model model, @PathVariable(required =
             true) Long id) {
         News entity = service.read(id);
         model.addAttribute("entity", entity);
