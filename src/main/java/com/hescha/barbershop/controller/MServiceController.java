@@ -10,8 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
@@ -32,7 +32,7 @@ public class MServiceController {
     }
 
     @RequestMapping(path = {"/edit", "/edit/{id}"})
-    public String edit(Model model, @PathVariable(name = "id", required =
+    public String edit(Model model, @PathVariable(required =
             false) Long id) {
         model.addAttribute("categories", serviceCategory.repository.findAll());
         if (id != null) {
@@ -44,7 +44,7 @@ public class MServiceController {
         return "service-add-edit";
     }
 
-    @RequestMapping(path = "/create", method = RequestMethod.POST)
+    @PostMapping("/create")
     public String createOrUpdate(MService entity, @Param("catId") Long catId) throws Exception {
         entity.setCategory(serviceCategory.read(catId));
         service.create(entity);
@@ -52,13 +52,13 @@ public class MServiceController {
     }
 
     @RequestMapping(path = "/delete/{id}")
-    public String delete(Model model, @PathVariable("id") Long id) throws Exception {
+    public String delete(Model model, @PathVariable Long id) throws Exception {
         service.delete(id);
         return "redirect:/service";
     }
 
     @RequestMapping("/get/{id}")
-    public String getByCategory(Model model, @PathVariable(name = "id", required =
+    public String getByCategory(Model model, @PathVariable(required =
             true) Long id) {
         model.addAttribute("categories", serviceCategory.repository.findAll());
         if (id != null) {

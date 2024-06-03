@@ -6,14 +6,13 @@ import java.util.List;
 import com.hescha.barbershop.entity.User;
 import com.hescha.barbershop.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
@@ -35,7 +34,7 @@ public class UserController {
     }
 
     @RequestMapping(path = {"/edit", "/edit/{id}"})
-    public String edit(Model model, @PathVariable(name = "id", required =
+    public String edit(Model model, @PathVariable(required =
             false) Long id) {
         if (id != null) {
             User entity = service.read(id);
@@ -46,7 +45,7 @@ public class UserController {
         return "user-add-edit";
     }
 
-    @RequestMapping(path = "/create", method = RequestMethod.POST)
+    @PostMapping("/create")
     public String createOrUpdate(User entity) throws Exception {
         if (entity.getId() == null)
             service.userRegistration(entity);
@@ -63,7 +62,7 @@ public class UserController {
     }
 
     @RequestMapping(path = "/delete/{id}")
-    public String delete(Model model, @PathVariable("id") Long id) throws Exception {
+    public String delete(Model model, @PathVariable Long id) throws Exception {
         service.delete(id);
         return "redirect:/user";
     }

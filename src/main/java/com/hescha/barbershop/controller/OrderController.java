@@ -17,8 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
@@ -42,7 +42,7 @@ public class OrderController {
     }
 
 
-    @RequestMapping(path = "/create", method = RequestMethod.POST)
+    @PostMapping("/create")
     public String createOrUpdate(Order entity, @Param("serId") Long serId,
 								 Principal princopal) {
         entity.setMservice(serviceMService.read(serId));
@@ -53,12 +53,12 @@ public class OrderController {
     }
 
     @RequestMapping(path = "/delete/{id}")
-    public String delete(Model model, @PathVariable("id") Long id) throws Exception {
+    public String delete(Model model, @PathVariable Long id) throws Exception {
         service.delete(id);
         return "redirect:/order";
     }
 
-    @RequestMapping(path = "/bookNow", method = RequestMethod.GET)
+    @GetMapping("/bookNow")
     public String bookNow(Model model, Principal principal) {
         model.addAttribute("list", serviceMService.repository.findAll());
         model.addAttribute("entity",
@@ -66,7 +66,7 @@ public class OrderController {
         return "orderPage";
     }
 
-    @RequestMapping(path = "/bookNow", method = RequestMethod.POST)
+    @PostMapping("/bookNow")
     public String bookNowPOST(Model model, @Param("serId") Long serId,
 							  @Param("dateTo") Date dateTo,
 							  @Param("timeTo") Time timeTo,
@@ -93,16 +93,16 @@ public class OrderController {
         return "redirect:/user/history";
     }
 
-    @RequestMapping(path = "/paiding/{id}", method = RequestMethod.GET)
-    public String paiding(Model model, @PathVariable("id") Long id) {
+    @GetMapping("/paiding/{id}")
+    public String paiding(Model model, @PathVariable Long id) {
         Order order = service.read(id);
         order.setPaid(true);
         service.update(order);
         return "redirect:/order";
     }
 
-    @RequestMapping(path = "/ending/{id}", method = RequestMethod.GET)
-    public String bookNow(Model model, @PathVariable("id") Long id) {
+    @GetMapping("/ending/{id}")
+    public String bookNow(Model model, @PathVariable Long id) {
         Order order = service.read(id);
         order.setEnded(true);
         service.update(order);
@@ -110,7 +110,7 @@ public class OrderController {
     }
 
     @RequestMapping(path = "/cancelReservation/{id}")
-    public String cancel(Model model, @PathVariable("id") Long id) throws Exception {
+    public String cancel(Model model, @PathVariable Long id) throws Exception {
         service.delete(id);
         return "redirect:/user/history";
     }
