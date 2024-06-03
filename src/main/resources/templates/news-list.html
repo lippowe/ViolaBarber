@@ -32,7 +32,7 @@
         </div>
         <div class="row mainContainer newsBetween">
             <div class="col-md-12">
-                <a class="ml-5 myButton float-right" href="/news/edit"
+                <a class="btn btn-primary mx-2" style="margin-left: 10px; margin-bottom: 5px;" href="/news/edit"
                    th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Добавить запись</a>
                 <div class="news-items" th:fragment="news-items">
                     <div class="item item-default" th:each="entity : ${list}">
@@ -47,10 +47,10 @@
                                 <div class="pagination-item item-moreDetail d-flex justify-content-end">
 
                                     <a th:href="'/news/edit/'+${entity.id}"
-                                       th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Редактировать</a>
+                                       th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}" class="btn btn-primary mx-2" style="margin-top: 2%;">Редактировать</a>
                                     <a th:href="'/news/delete/'+${entity.id}"
-                                       th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Удалить</a>
-                                    <a th:href="'/news/get/'+${entity.id}">Подробнее</a>
+                                       th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}" class="btn btn-primary mx-2" style="margin-top: 2%;">Удалить</a>
+                                    <a th:href="'/news/get/'+${entity.id}" class="btn btn-primary mx-2" style="margin-top: 2%;">Подробнее</a>
                                 </div>
                         </div>
                     </div>

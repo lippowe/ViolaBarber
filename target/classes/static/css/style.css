@@ -1311,7 +1311,6 @@ h1 {
 	-ms-transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
 	-o-transform: translate(-50%, -50%);
-	top: 50%;
 	z-index: 999;
 	padding: 24px 45px;
 	background-repeat: repeat-x, repeat-x;
@@ -3378,6 +3377,7 @@ font-size:12px;
 }
 
 .menu-wrap {
+	
     background: #000;
     display: table;
     width: 100%;
@@ -5264,3 +5264,8 @@ color:#B59E5C !important;
 	float: right;
 	width:33%;
   }
+
+.align-logo {
+	float:left;
+}
+

@@ -24,74 +24,75 @@
 
 <body>
 
-<header class="header" th:fragment="nav" id="header2">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-xs-5 logo">
-                <a href="/"><img src="/img/logo-dark.png" class="img-responsive" alt=""/></a>
+    <header class="header" th:fragment="nav" id="header2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-5 logo">
+                    <a href="/"><img src="/img/logo-dark.png" class="img-responsive" alt=""/></a>
+                </div>
+                <div class="space20"></div>
+                <div class="col-md-9 col-xs-7">
+                    <div class="top-bar">
+                        <ul>
+                            <li class="tb-info">
+                                <a data-dialog1="somedialog1" class="trigger">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span class="hidden-xs">8:00-18:00<br><em>Каждый день недели</em></span>
+                                    <span class="visible-xs hidden-sm hidden-md hidden-lg">9:00-19:00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/order/bookNow" class="trigger button btn-xs color"
+                                   th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_USER')}">Бронь
+                                    онлайн</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-9 col-xs-7">
-                <div class="top-bar">
-                    <ul>
-                        <li class="tb-info">
-                            <a data-dialog1="somedialog1" class="trigger">
-                                <i class="fa fa-clock-o"></i>
-                                <span class="hidden-xs">8:00-18:00<br><em>Каждый день недели</em></span>
-                                <span class="visible-xs hidden-sm hidden-md hidden-lg">9:00-19:00</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/order/bookNow" class="trigger button btn-xs color"
-                               th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_USER')}">Бронь
-                                онлайн</a>
-                        </li>
-                    </ul>
+            <div class="menu-wrap">
+                <div id="mobnav-btn">Меню <i class="fa fa-bars"></i></div>
+                <ul class="sf-menu">
+                    <li>
+                        <a href="/">Главная</a>
+                    </li>
+                    <li>
+                        <a href="/service" th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Услуги(Админ)</a>
+                    </li>
+                    <li>
+                        <a href="/category" th:if="${#request.userPrincipal == null || #request.isUserInRole('ROLE_USER')}">Услуги</a>
+                    </li>
+                    <li>
+                        <a href="/about" th:if="${#request.userPrincipal == null || #request.isUserInRole('ROLE_USER')}">О нас</a>
+                    </li>
+                    <li>
+                        <a href="/contact" th:if="${#request.userPrincipal == null || #request.isUserInRole('ROLE_USER')}">Контакты</a>
+                    </li>
+                    <li>
+                        <a href="/news">Новости</a>
+                    </li>
+                    <li th:if="${#request.userPrincipal == null}">
+                        <a href="/login">Вход и Регистрация</a>
+                    </li>
+                    <li>
+                        <a href="/user/history"
+                           th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_USER')}">История</a>
+                    </li>
+                    <li>
+                        <a href="/user" th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Пользователи</a>
+                    </li>
+                    <li>
+                        <a href="/order" th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Заявки</a>
+                    </li>
+                    <li th:if="${#request.userPrincipal != null}">
+                        <a href="/logout">Выход</a>
+                    </li>
+                </ul>
+                <div class="header-xtra">
                 </div>
             </div>
         </div>
-        <div class="menu-wrap">
-            <div id="mobnav-btn">Меню <i class="fa fa-bars"></i></div>
-            <ul class="sf-menu">
-                <li>
-                    <a href="/">Главная</a>
-                </li>
-                <li>
-                    <a href="/service" th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Услуги(Админ)</a>
-                </li>
-                <li>
-                    <a href="/category" th:if="${#request.userPrincipal == null || #request.isUserInRole('ROLE_USER')}">Услуги</a>
-                </li>
-                <li>
-                    <a href="/about" th:if="${#request.userPrincipal == null || #request.isUserInRole('ROLE_USER')}">О нас</a>
-                </li>
-                <li>
-                    <a href="/contact" th:if="${#request.userPrincipal == null || #request.isUserInRole('ROLE_USER')}">Контакты</a>
-                </li>
-                <li>
-                    <a href="/news">Новости</a>
-                </li>
-                <li th:if="${#request.userPrincipal == null}">
-                    <a href="/login">Вход и Регистрация</a>
-                </li>
-                <li>
-                    <a href="/user/history"
-                       th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_USER')}">История</a>
-                </li>
-                <li>
-                    <a href="/user" th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Пользователи</a>
-                </li>
-                <li>
-                    <a href="/order" th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Заявки</a>
-                </li>
-                <li th:if="${#request.userPrincipal != null}">
-                    <a href="/logout">Выход</a>
-                </li>
-            </ul>
-            <div class="header-xtra">
-            </div>
-        </div>
-    </div>
-</header>
+    </header>
 
 <footer id="footer2" th:fragment="footer">
     <div class="footer-bottom container">
