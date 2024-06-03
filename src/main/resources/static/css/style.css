@@ -2437,6 +2437,13 @@ margin:0 0 25px;
 	margin:0 auto;
 }
 
+.container-left {
+	width:1%;
+	float: left;
+	max-width:10%;
+	margin:0 auto;
+}
+
 .nav-tabs > li {
     margin-right: -3px;
 }
@@ -2730,6 +2737,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 #mobnav-btn {
 	display: none;
+	float: right;
 	font-size: 15px;
 	font-weight: 400;
 	text-transform:uppercase;
@@ -2741,6 +2749,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	display: block;
 	width: 40%;
 }
+
+div#logo {
+	float: left;
+  }
 
 #mobnav-btn i {
 	float:right;
@@ -3377,13 +3389,36 @@ font-size:12px;
 }
 
 .menu-wrap {
-	
+	float: right;
     background: #000;
     display: table;
     width: 100%;
     position: 5px;
     position: relative;
 	z-index:888;
+}
+
+.logo-setting {
+	
+	width: 150pt;
+	height: 150pt;
+}
+
+.menu-row {
+	overflow: auto;
+}
+
+.menu-right {
+	
+}
+
+.logo-left {
+	width:10%;
+	height:100%;
+	position:absolute;
+	left:0%;
+	top:-5px;
+	margin-left: -350px;
 }
 
 .sf-menu > li {
@@ -5268,4 +5303,14 @@ color:#B59E5C !important;
 .align-logo {
 	float:left;
 }
+
+.img-responsive-logo {
+	display: block;
+    max-width: 100%;
+    height: auto;
+	width: 150px;
+	height: 100px;
+}
+
+
 
