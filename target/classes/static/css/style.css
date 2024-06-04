@@ -3389,7 +3389,6 @@ font-size:12px;
 }
 
 .menu-wrap {
-	float: right;
     background: #000;
     display: table;
     width: 100%;
@@ -3402,14 +3401,6 @@ font-size:12px;
 	
 	width: 150pt;
 	height: 150pt;
-}
-
-.menu-row {
-	overflow: auto;
-}
-
-.menu-right {
-	
 }
 
 .logo-left {
