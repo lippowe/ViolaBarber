@@ -1347,7 +1347,7 @@ h1 {
 .portfolio-gal .folio-item .folio-border .folio-detail {
 	padding:67px 55px;
 	opacity:0;
-	text-align:center;
+	text-align:center; 
 }
 
 .portfolio-gal .folio-item .folio-border .folio-detail h5 {
@@ -5275,26 +5275,6 @@ color:#B59E5C !important;
 	position: unset;
 }
 
-.align-left {
-	float: left;
-	width:33%;
-  }
-  
-.align-center {
-	text-align: center;
-	display: inline-block;
-	width:34%;
-  }
-  
-.align-right {
-	float: right;
-	width:33%;
-  }
-
-.align-logo {
-	float:left;
-}
-
 .img-responsive-logo {
 	display: block;
     max-width: 100%;
@@ -5303,5 +5283,8 @@ color:#B59E5C !important;
 	height: 100px;
 }
 
-
-
+@media screen and (max-width: 768px) {
+    .col-md-8 mx-auto{
+		display: none;
+	}
+}

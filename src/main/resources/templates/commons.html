@@ -57,7 +57,7 @@
                         <a href="/">Главная</a>
                     </li>
                     <li>
-                        <a href="/service" th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Услуги(Админ)</a>
+                        <a href="/service" th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Услуги</a>
                     </li>
                     <li>
                         <a href="/category" th:if="${#request.userPrincipal == null || #request.isUserInRole('ROLE_USER')}">Услуги</a>
