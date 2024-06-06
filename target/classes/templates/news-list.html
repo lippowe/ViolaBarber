@@ -30,7 +30,7 @@
         <div class="page_header page_header2 text-center">
             <h2>Новости</h2>
         </div>
-        <div class="row mainContainer newsBetween">
+        <div class="row mainContainer newsBetween" >
             <div class="col-md-12">
                 <a class="btn btn-primary mx-2" style="margin-left: 10px; margin-bottom: 5px;" href="/news/edit"
                    th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Добавить запись</a>
@@ -62,6 +62,8 @@
 
 
 <div th:replace="~{commons :: footer}"></div>
+<div th:replace="~{commons :: js}"></div>
 </body>
+
 
 </html>

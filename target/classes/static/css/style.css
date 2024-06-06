@@ -5283,8 +5283,23 @@ color:#B59E5C !important;
 	height: 100px;
 }
 
-@media screen and (max-width: 768px) {
-    .col-md-8 mx-auto{
-		display: none;
-	}
+.row-content {
+	margin-right: -15px;
+	margin-left: -15px;
+	display: flex;
+	justify-content: center;
+}
+
+.map-vh {
+	height: 730px;
+	width: 200px;
+}
+
+@media screen and (max-width: 992px)
+{
+	.row-content { display: block; }
+	.contact-info iframe { width: 100%;}
+	.news-items {display: block;}
+	.newsBetween { overflow: hidden; overflow-x: auto; }
+	/*.row-content { justify-content: center; display:inline-flex; flex-direction: column; }*/
 }
