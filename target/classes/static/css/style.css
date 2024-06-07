@@ -5295,11 +5295,21 @@ color:#B59E5C !important;
 	width: 200px;
 }
 
+.news-items{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
 @media screen and (max-width: 992px)
 {
 	.row-content { display: block; }
 	.contact-info iframe { width: 100%;}
-	.news-items {display: block;}
+	.news-items { flex-wrap: nowrap;}
 	.newsBetween { overflow: hidden; overflow-x: auto; }
 	/*.row-content { justify-content: center; display:inline-flex; flex-direction: column; }*/
 }
+
+/*@media only screen and (max-width: 993px)
+{
+	.news-items {}
+}*/
