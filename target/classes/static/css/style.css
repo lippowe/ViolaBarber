@@ -1331,7 +1331,7 @@ h1 {
 	padding:3px;
 	position:absolute;
 	left:50%;
-	margin-right:-50%;
+	margin-right:-10%;
 	transform:translate(-50%,-50%);
 	-moz-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
@@ -3266,7 +3266,7 @@ div#logo {
 .top-bar {
     display: table;
     float: right;
-    margin: 23px 0 0px;
+	margin: 20px 50px 0px;
 }
 
 .top-bar ul li {
@@ -5306,6 +5306,7 @@ color:#B59E5C !important;
 	.contact-info iframe { width: 100%;}
 	.news-items { flex-wrap: nowrap;}
 	.newsBetween { overflow: hidden; overflow-x: auto; }
+	.item img { width: 290px }
 	/*.row-content { justify-content: center; display:inline-flex; flex-direction: column; }*/
 }
 

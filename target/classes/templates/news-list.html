@@ -9,16 +9,27 @@
             top: 0;
         }
         .item{
+            display: flex;
+            height: 250pt;
+            width: 260pt;
             border: 1px solid black;
             margin: 10px;
+            flex-wrap: wrap;
         }
         .item img{
-            width: 300px;
+            width: 90%;
+            overflow: hidden;
+            height: 80%;
         }
         .news-item{
             display: flex;
         }
+        @media screen and (max-width: 992px)
+        {
+	    .item img { width: 290px }	
+        }
     </style>
+    <script src="https://cdn.tiny.cloud/1/3s9v1dsfqpvg1kq1f7cljztkg03ua0ktzoeq908598a996f4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body>
@@ -42,7 +53,7 @@
                                 <small class="item-date" th:text="${entity.dates}">02/15/2015 - 16:17</small>
                             </h3>
                         </div>
-                        <div class="item-body">
+                        <div class="item-body" style="text-align: center;">
                             <img th:src="${entity.image}">
                                 <div class="pagination-item item-moreDetail d-flex justify-content-end">
 
