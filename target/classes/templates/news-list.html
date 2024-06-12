@@ -4,7 +4,7 @@
 <head>
     <title>Новости</title>
     <div th:replace="~{commons :: head}"></div>
-    <style type="text/css">
+    <!--<style type="text/css">
         .menu-wrap {
             top: 0;
         }
@@ -27,6 +27,99 @@
         @media screen and (max-width: 992px)
         {
 	    .item img { width: 290px }	
+    }-->
+    </style>
+    <style type="text/css">
+           @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+        *{
+        box-sizing: border-box;
+        }
+
+        .menu-wrap {
+            top: 0;
+        }
+    
+    .container-news {
+        display: flex;
+        width: 1500px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .card {
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        width: 450px;
+        height: 500px;
+        max-height: max-content;
+    }
+    .card-header img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+        min-height: 250px;
+    }
+    .tag {
+        background: #cccccc;
+        border-radius: 50px;
+        font-size: 12px;
+        margin: 0;
+        color: #fff;
+        padding: 2px 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .tag-teal {
+        background-color: #47bcd4;
+        margin: -60px 0px 5px 0px;
+    }
+    .tag-purple {
+        background-color: #5e76bf;
+    }
+    .tag-pink {
+        background-color: #cd5b9f;
+    }
+    .card-body p {
+        font-size: 13px;
+        margin: 0 0 40px;
+    }
+    .user {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .user img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    .user-info h5 {
+        margin: 0;
+    }
+    .user-info small {
+        color: #545d7a;
+    }
+    @media screen and (max-width: 992px)
+        {
+            .container-news {
+                flex-wrap: nowrap;
+                
+            }
+            .container-center {
+                overflow: hidden; 
+                overflow-x: auto;
+                justify-content: left;
+            }
         }
     </style>
     <script src="https://cdn.tiny.cloud/1/3s9v1dsfqpvg1kq1f7cljztkg03ua0ktzoeq908598a996f4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
@@ -41,7 +134,10 @@
         <div class="page_header page_header2 text-center">
             <h2>Новости</h2>
         </div>
-        <div class="row mainContainer newsBetween" >
+        <a class="btn btn-primary mx-2" style="margin-left: -160px; margin-bottom: 5px;" href="/news/edit"
+        th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Добавить запись</a>          
+    </div>
+        <!--<div class="row mainContainer newsBetween">
             <div class="col-md-12">
                 <a class="btn btn-primary mx-2" style="margin-left: 10px; margin-bottom: 5px;" href="/news/edit"
                    th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">Добавить запись</a>
@@ -56,19 +152,49 @@
                         <div class="item-body" style="text-align: center;">
                             <img th:src="${entity.image}">
                                 <div class="pagination-item item-moreDetail d-flex justify-content-end">
-
+                        </div>
                                     <a th:href="'/news/edit/'+${entity.id}"
                                        th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}" class="btn btn-primary mx-2" style="margin-top: 2%;">Редактировать</a>
                                     <a th:href="'/news/delete/'+${entity.id}"
                                        th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}" class="btn btn-primary mx-2" style="margin-top: 2%;">Удалить</a>
                                     <a th:href="'/news/get/'+${entity.id}" class="btn btn-primary mx-2" style="margin-top: 2%;">Подробнее</a>
                                 </div>
-                        </div>
+                        
                     </div>
                 </div>
+            </div>-->
+            
+            <div class="container-center">
+                <div class="container-news">
+                    <div class="card" th:each="entity : ${list}">
+                      <div class="card-header">
+                        <img th:src="${entity.image}">
+                      </div>
+                      <div class="card-body" th:fragment="news-items">
+                        <span class="tag tag-teal">Интересное</span>
+                        <h3 class="item-title"><a th:href="'/news/get/'+${entity.id}" th:text="${entity.name}">Название записи</a><br>
+                        </h3>
+                        <div>
+                            <a th:href="'/news/edit/'+${entity.id}"
+                            th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}" class="btn btn-primary mx-2" style="margin-top: 2%;">Редактировать</a>
+                            <a th:href="'/news/delete/'+${entity.id}"
+                            th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}" class="btn btn-primary mx-2" style="margin-top: 2%;">Удалить</a>
+                            <a th:href="'/news/get/'+${entity.id}"
+                            th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}" class="btn btn-primary mx-2" style="margin-top: 2%;">Подробнее</a>
+                            <a th:href="'/news/get/'+${entity.id}"
+                            th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_USER')}" class="Button" style="margin-top: 2%; font-size: medium;">Подробнее</a>
+                        </div>
+                        <div class="user">
+                          <div class="user-info">
+                            <h5 style="color: red; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Администратор</h5>
+                        <small th:text="${entity.dates}" style="font-size: medium;"></small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
             </div>
+            
         </div>
-    </div>
 </section>
 
 
