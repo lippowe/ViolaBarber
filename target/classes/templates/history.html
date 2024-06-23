@@ -4,7 +4,9 @@
 <head>
     <title>История</title>
     <div th:replace="~{commons :: head}"></div>
-
+    <style>
+        
+    </style>
 </head>
 <body>
    
@@ -37,8 +39,8 @@
                                             <td th:text="${entity.dateTo}"></td>
                                             <td th:text="${entity.timeTo}"></td>
                                             <td th:text="${entity.mservice}"></td>
-                                            <td th:text="${entity.isPaid}"></td>
-                                            <td th:text="${entity.isEnded}"></td>
+                                            <td th:text="${entity.isPaid ? 'Оплачено' : 'Неоплачено'}"></td>
+                                            <td th:text="${entity.isEnded ? 'Выполнено' : 'Не выполнено'}"></td>
                                             <td class="btnInTable widthLastCol" th:if="${entity.isPaid == false && entity.isEnded==false}">
                                                 <a th:href="@{/order/cancelReservation/{id}(id=${entity.id})}" class="btn btn-primary">
                                                     <i class="fas fa-trash">Отменить бронь</i>
