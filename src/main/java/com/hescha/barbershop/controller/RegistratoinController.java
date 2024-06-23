@@ -19,13 +19,26 @@ public class RegistratoinController {
     @Autowired
     UserServiceImpl userService;
 
-    @PostMapping
+    /*@PostMapping
     public String registraionUser(Model model, @ModelAttribute User user,
                                   RedirectAttributes redirectAttributes) {
         boolean success = userService.userRegistration(user);
         String response = success ? "Успешно зарегистрирован" : "Ошибка " +
-                "регистрации. Попробуйте позже.";
+                "регистрации. Такой пользователь уже существует.";
         redirectAttributes.addFlashAttribute("success", response);
+        return "redirect:/login";
+    }*/
+
+    @PostMapping
+    public String registrationUser(@ModelAttribute User user,
+                                   RedirectAttributes redirectAttributes) {
+
+        boolean success = userService.userRegistration(user);
+        if (success) {
+            redirectAttributes.addFlashAttribute("successMessage", "Успешно зарегистрирован");
+        } else {
+            redirectAttributes.addFlashAttribute("errorMessage", "Ошибка регистрации. Такой пользователь уже существует.");
+        }
         return "redirect:/login";
     }
 

@@ -4926,6 +4926,7 @@ a.thumbnail.active {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+
 .alert h4 {
   margin-top: 0;
   color: inherit;
@@ -4955,6 +4956,9 @@ a.thumbnail.active {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
+  position: absolute;
+  top: -182px;
+  right: 10px;
 }
 .alert-success hr {
   border-top-color: #c9e2b3;
@@ -4966,6 +4970,9 @@ a.thumbnail.active {
   color: #31708f;
   background-color: #d9edf7;
   border-color: #bce8f1;
+  position: absolute;
+  top: -182px;
+  right: 10px;
 }
 .alert-info hr {
   border-top-color: #a6e1ec;
@@ -4988,6 +4995,9 @@ a.thumbnail.active {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
+  position: absolute;
+  top: -182px;
+  right: 10px;
 }
 .alert-danger hr {
   border-top-color: #e4b9c0;

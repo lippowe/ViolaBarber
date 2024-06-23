@@ -18,6 +18,7 @@ com\hescha\barbershop\entity\Category.class
 com\hescha\barbershop\entity\News.class
 com\hescha\barbershop\config\SwaggerConfig.class
 com\hescha\barbershop\repository\UserRepository.class
+com\hescha\barbershop\controller\UserController$LoginController.class
 com\hescha\barbershop\service\CrudService.class
 com\hescha\barbershop\service\CategoryService.class
 com\hescha\barbershop\service\NewsService.class

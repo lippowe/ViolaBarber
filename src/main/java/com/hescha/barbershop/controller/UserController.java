@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -61,16 +63,27 @@ public class UserController {
         return "redirect:/user";
     }
 
-    @RequestMapping(path = "/delete/{id}")
-    public String delete(Model model, @PathVariable Long id) throws Exception {
-        service.delete(id);
-        return "redirect:/user";
-    }
+    @Controller
+    public class LoginController {
+        @GetMapping("/login")
+        public String login(@RequestParam(value = "error", required = false) String error, Model model) {
+            if (error != null) {
+                model.addAttribute("error", "true");
+            }
+            return "login";
+        }
+    }    
 
-    @RequestMapping(path = "/history")
-    public String history(Model model, Principal principal) {
-        User user = service.findByUsername(principal.getName());
-        model.addAttribute("list", user.getOrders());
-        return "history";
-    }
+        @RequestMapping(path = "/delete/{id}")
+        public String delete(Model model, @PathVariable Long id) throws Exception {
+            service.delete(id);
+            return "redirect:/user";
+        }
+
+        @RequestMapping(path = "/history")
+        public String history(Model model, Principal principal) {
+            User user = service.findByUsername(principal.getName());
+            model.addAttribute("list", user.getOrders());
+            return "history";
+        }
 }
