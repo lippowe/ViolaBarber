@@ -40,8 +40,8 @@
                                         <td th:text="${entity.timeTo}"></td>
                                         <td th:text="${entity.mservice}"></td>
                                         <td th:text="${entity.user.fio}"></td>
-                                        <td th:text="${entity.isPaid ? 'Оплачено' : 'Неоплачено'}"></td>
-                                        <td th:text="${entity.isEnded ? 'Выполнено' : 'Не выполнено'}"></td>
+                                        <td th:text="${entity.isPaid}"></td>
+                                        <td th:text="${entity.isEnded}"></td>
                                         <td class="btnInTable widthLastCol">
                                             <a th:href="@{/order/paiding/{id}(id=${entity.id})}"
                                                class="btn btn-primary ">
